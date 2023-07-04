@@ -16,17 +16,23 @@
 
 3.给盒子安装ros使用命令'''wget http://fishros.com/install -O fishros && sudo bash fishros'''
 
-3.根据大疆的官网去配置盒子的环境[大疆官网配置文件][https://developer.dji.com/cn/onboard-sdk/documentation/quickstart/development-environment.html]，完成里面的Linux下载对应的[Linux开发包][dji-sdk/Onboard-SDK: DJI Onboard SDK Official Repository (github.com)]开发环境配置和ROS下载[ROS开发包][dji-sdk/Onboard-SDK-ROS: Official ROS packages for DJI onboard SDK. (github.com)]环境配置  可以参考这个[博客][https://blog.csdn.net/Jingr98/article/details/114847105?spm=1001.2014.3001.5506]。
+3.根据大疆的官网去配置盒子的环境[大疆官网配置文件][https://developer.dji.com/cn/onboard-sdk/documentation/quickstart/development-environment.html]
+完成里面的Linux下载对应的[Linux开发包][dji-sdk/Onboard-SDK: DJI Onboard SDK Official Repository (github.com)]
+开发环境配置和ROS下载[ROS开发包][dji-sdk/Onboard-SDK-ROS: Official ROS packages for DJI onboard SDK. (github.com)]
+环境配置可以参考这个[博客][https://blog.csdn.net/Jingr98/article/details/114847105?spm=1001.2014.3001.5506]。
 
 4.参考官网的运行Linux示例代码和ROS示例代码来运行实例程序。Linux注意onboard-sdk/sample/platform/linux/common/UserConfig.txt 中的app_id和app_key是第一步中的appi_d和app_key,device选择对应的端口(这里是ttyTHS1）,bauderate就是第二步力设置的波特率，acm_port是对应的（这里是ttyACM0）。ROS修改launch中的XXX.launch。acm_name（就是/dev/ttyACM0），sperial_name(/dev/ttyTHS1)，baund_rate波特率，app_id，enc_key(app_key)。运行成功就可以继续后续部署了。
 
-5.参考这个[博客][https://blog.csdn.net/weixin_43702653/article/details/129249585?spm=1001.2014.3001.5506]给盒子安装环境。安装完成后就有anaconda,cuda,cudnn,pytorch,torchvision。
+5.参考这个[博客][https://blog.csdn.net/weixin_43702653/article/details/129249585?spm=1001.2014.3001.5506]
+给盒子安装环境。安装完成后就有anaconda,cuda,cudnn,pytorch,torchvision。
 
-这一步遇到的bug ***E: Unable to [locate](https://so.csdn.net/so/search?q=locate&spm=1001.2101.3001.7020) package nvidia-jetpack***，参考这个[博客][https://blog.csdn.net/Black__Jacket/article/details/127736938?spm=1001.2014.3001.5506]解决。
+这一步遇到的bug ***E: Unable to [locate](https://so.csdn.net/so/search?q=locate&spm=1001.2101.3001.7020) package nvidia-jetpack***，参考这个[博客][https://blog.csdn.net/Black__Jacket/article/details/127736938?spm=1001.2014.3001.5506]
+解决。
 
 6.装好基本环境之后就是安装追踪器所需要的环境,编写调用飞机摄像头读取图像并进行处理的python代码
 
-7.运行中遇到的bug，通过第五步系统自动装的opencv存在问题，每次一调用cv.imshow程序就无响应。解决方法是参考这个[博客][https://blog.csdn.net/weixin_39298885/article/details/110851373?spm=1001.2014.3001.5506]卸载原有的opencv重新编译opencv即可。
+7.运行中遇到的bug，通过第五步系统自动装的opencv存在问题，每次一调用cv.imshow程序就无响应。解决方法是参考这个[博客][https://blog.csdn.net/weixin_39298885/article/details/110851373?spm=1001.2014.3001.5506]
+卸载原有的opencv重新编译opencv即可。
 
 
 
